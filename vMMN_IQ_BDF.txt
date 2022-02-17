@@ -1,0 +1,115 @@
+# *********************************************************************************#
+# Bin Descriptor File for Frankfurt MMN Data (MJE - Fall 2018)
+#
+# Trial Structure:
+# ITI (between stim pairs): 800 ms
+# ISI (within each pair): 300 ms
+# Stimulus duration: 100 ms
+#
+#
+# Simple Condition == Bins #1-4
+# Reverse Condition == Bins #5-8
+# Rule Condition == Bins 9-12
+#
+# NOTE: All triggers below are from non-response trials :)
+# ********************************************************************************#
+
+# SIMPLE CONDITION (RED BLOCKS)
+bin 1
+Simple Standard Red to Red; (time-lock to 1st position); [SSRR1 == 7 preceding 107]
+.{7}
+
+bin 2
+Simple Standard Red to Red; (time-lock to 2nd position); [SSRR1 == 107 preceded by 7]
+{7}.{107}
+
+bin 3
+Simple Odd Green to Red; (time-lock to odd in 1st position); SOGR
+.{31}{131}
+
+bin 4
+Simple Odd Red to Green (time-lock to odd in 2nd position); SORG (larger MMN expected here; Stefanics p. 7)
+{2}.{102}
+
+
+# REVERSE CONDITION (GREEN BLOCKS)
+bin 5
+Reverse Standard Green to Green; (time-lock to 1st position); [RSGG1 == 47 preceding 147]
+.{47}
+
+bin 6
+Reverse Standard Green to Green; (time-lock to 2nd position); [RSGG2 == 147 preceded by 47]
+{47}.{147}
+
+bin 7
+Reverse Odd Red to Green (time-lock to odd in 1st position); RORG
+.{11}{111}
+
+bin 8
+Reverse Odd Green to Red (time-lock to odd in 2nd position); ROGR (larger MMN expected here; Stefanics p. 7)
+{42}.{142}
+
+
+# RULE CONDITION (50/50 BLOCKS); [HERE WE ONLY TIME-LOCK THE 2ND STIMULUS)
+bin 9
+Rule Standard Green to Green (LSGG)
+{57}.{157}
+
+bin 10
+Rule Standard Red to Red (LSRR)
+{27}.{127}
+
+bin 11
+Rule MMN Red to Green (Odd always 2nd position for these) (LORG)
+{22}.{122}
+
+bin 12
+Rule MMN Green to Red (Odd always 2nd position for these) (LOGR)
+{52}.{152}
+
+
+#***************************** NEVER IMPLEMENTED BELOW HERE *********************************************************************#
+#-------------- Trials where the expected affirmative response was given ------------------------------------------------#
+# [Not used -- could not find response-related triggers] Abbreviations for response types:
+# Crej (Correct Rejection; correctly withheld a response when none was needed)
+# FA (False Alarm; responded when they should have withheld)
+# Hit (correctly identifed the cross changed)
+# Miss (failed to respond when they should have 
+
+# Red Simple Stim1 Hit
+# Red Simple Stim2 Hit
+# Red Reverse Stim1 Hit
+# Red Reverse Stim2 Hit
+# Green Simple Stim1 Hit
+# Green Simple Stim2 Hit
+# Green Reverse Stim1 Hit
+# Green Reverse Stim2 Hit
+# Red Rule Stim1 Hit 
+# Red Rule Stim2 Hit
+# Green Rule Stim1 Hit
+# Green Rule Stim2 Hit 
+
+#--------------- ERROR TRIALS -- we will not make ERPs for these, but we will keep a count of them and extract Bhx data----------------#
+#-------------- False Alarms - no response was appropriate and the participant responded anyhow ---------------------------------------#
+
+#Red Simple FA
+#Red Reverse FA
+#Green Simple FA
+#Green Reverse FA
+#Red Rule FA
+#Green Rule FA
+
+#-------------- Misses - participant failed to responded although the cross changed ------------------------------------------------#
+
+#Red Simple Stim1 Miss
+#Red Simple Stim2 Miss
+#Red Reverse Stim1 Miss
+#Red Reverse Stim2 Miss
+#Green Simple Stim1 Miss
+#Green Simple Stim2 Miss
+#Green Reverse Stim1 Miss
+#Green Reverse Stim2 Miss
+#Red Rule Stim2 Miss
+#Red Rule Stim1 Miss
+#Green Rule Stim1 Miss 
+#Green Rule Stim2 Miss
